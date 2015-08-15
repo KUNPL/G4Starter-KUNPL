@@ -16,56 +16,59 @@ CMakeList.txt.
 
 ###1. How to compile
 
-- **Go into the G4Starter-KUNPL directory:**  
-```sh
-> cd [Path-to-KUNPLG4]
-```
+- **Go into the G4Starter-KUNPL directory:**
+  ```sh
+  > cd [Path-to-KUNPLG4]
+  ```
 
-- **Make build directory, go into it and build with cmake:**  
-```sh
-> mkdir build  
-> cd build  
-> cmake ..  
-> make   
-```
+- **Make build directory, go into it and build with cmake:**
+  ```sh
+  > mkdir build  
+  > cd build  
+  > cmake ..  
+  > make   
+  ```
 
 
 ###2. How to run
 
 After compiling, executables are created in build directory.
-You have two choices now. Eather type commands by yourself, or
-use macros you wrote beforehand.
+You have two choices now. Eather 1) type commands by yourself, 
+2) or use macros you wrote beforehand.
 
-1. **Former case**  
-  - **Execute KUNPLEx1:**  
-```sh
-> ./KUNPLEx1
-```
+####1) Former case
+- **Execute executable and type in the commands:**
+  ```sh
+  > ./KUNPLEx1
+  
+  Starting Geant4 kernal...
+  
+  Idle> /run/beamOn 10  
+  Idle> ...  
+  Idle> exit  
+  ```
+  
+####2) Later case
+- **Execute executable and load macro file**
+  ```sh
+  > ./KUNPLEx1
+  
+  Starting Geant4 kernal...
+  
+  Idle> /control/execute macros/run1.mac  
+  ....  
+  Idle> exit  
+  ```
 
-  - **and type in the commands:**  
-```sh
-Idle> /run/beamOn 10  
-Idle> ...  
-Idle> exit  
-```
+- **Execute executable in the 'batch' mode from macro files:**
+  ```sh
+  > ./KUNPLEx1 macros/run1.mac  
+  ```
 
-  - **or**  
-```sh
-Idle> /control/execute run1.mac  
-....  
-Idle> exit  
-```
-
-2. **Later case**
-  - **Execute KUNPLEx1 in the 'batch' mode from macro files (without visualization):**  
-```sh
-> ./KUNPLEx1 macros/run1.mac  
-```
-
-  - **or if you want output:**  
-```sh
-> ./KUNPLEx1 macros/KUNPLEx1.in > KUNPLEx1.out  
-```
+- **Or if you want output, you may do:**
+  ```sh
+  > ./KUNPLEx1 macros/KUNPLEx1.in > KUNPLEx1.out  
+  ```
 
 ###3. How to add classes
 
