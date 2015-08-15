@@ -4,24 +4,22 @@
 These Geant4 examples are tutorial and template for Korea University 
 Nuclear Physics Lab (KUNPL) Geant4 primary users. 
 
-Examples were tested with version Geant4.10.02.
+- Examples were tested with Geant4 version 4.10.02.
 
-NOTE that CMakeFile.txt contains dependency of ROOT. If you think this 
-causes problem, set variable 'useROOT' from 'true' to 'false' in 
-CMakeList.txt.
-
-- **Author:** _JungWoo LEE, Korea Univ. (phyjics@gmail.com)_
+- CMakeList contains dependency of ROOT. If you think this causes
+problem (you may not have ROOT for example), set 
+variable 'useROOT' from 'true' to 'false' in CMakeList.txt.
 
 ---
 
 ###1. How to compile
 
-- **Go into the G4Starter-KUNPL directory:**
+- Go into the G4Starter-KUNPL directory:
   ```sh
   > cd [Path-to-KUNPLG4]
   ```
 
-- **Make build directory, go into it and build with cmake:**
+- Make build directory, go into it and build with cmake:
   ```sh
   > mkdir build  
   > cd build  
@@ -37,7 +35,7 @@ You have two choices now. Eather 1) type commands by yourself,
 2) or use macros you wrote beforehand.
 
 ####1) Former case
-- **Execute executable and type in the commands:**
+- Execute executable and type in the commands:
   ```sh
   > ./KUNPLEx1
   
@@ -49,7 +47,7 @@ You have two choices now. Eather 1) type commands by yourself,
   ```
   
 ####2) Later case
-- **Execute executable and load macro file**
+- Execute executable and load macro file
   ```sh
   > ./KUNPLEx1
   
@@ -60,12 +58,12 @@ You have two choices now. Eather 1) type commands by yourself,
   Idle> exit  
   ```
 
-- **Execute executable in the 'batch' mode from macro files:**
+- Execute executable in the 'batch' mode from macro files:
   ```sh
   > ./KUNPLEx1 macros/run1.mac  
   ```
 
-- **Or if you want output, you may do:**
+- Or if you want output, you may do:
   ```sh
   > ./KUNPLEx1 macros/KUNPLEx1.in > KUNPLEx1.out  
   ```
