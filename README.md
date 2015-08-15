@@ -1,7 +1,7 @@
 # Geant4 Starter for KUNPL
 
 
-These Geant4 examples are tutorial and template for Korea University 
+- These Geant4 examples are tutorial and template for Korea University 
 Nuclear Physics Lab (KUNPL) Geant4 primary users. 
 
 - Examples were tested with Geant4 version 4.10.02.
@@ -34,7 +34,7 @@ After compiling, executables are created in build directory.
 You have two choices now. Eather 1) type commands by yourself, 
 2) or use macros you wrote beforehand.
 
-####1) Former case
+#####1) Former case
 - Execute executable and type in the commands:
   ```sh
   > ./KUNPLEx1
@@ -46,7 +46,7 @@ You have two choices now. Eather 1) type commands by yourself,
   Idle> exit  
   ```
   
-####2) Later case
+#####2) Later case
 - Execute executable and load macro file
   ```sh
   > ./KUNPLEx1
