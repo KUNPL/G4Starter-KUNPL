@@ -10,16 +10,16 @@ NOTE that CMakeFile.txt contains dependency of ROOT. If you think this
 causes problem, set variable 'useROOT' from 'true' to 'false' in 
 CMakeList.txt.
 
-- Author: JungWoo LEE, Korea Univ. (phyjics@gmail.com)
+- **Author:** _JungWoo LEE, Korea Univ. (phyjics@gmail.com)_
 
 ---
 
 ###1. How to compile
 
-- Go into the KUNPLG4 directory (where this README.md is):  
+- **Go into the G4Starter-KUNPL directory:**  
   $ cd [Path-to-KUNPLG4]
 
-- Make build directory, go into it and build with cmake:
+- **Make build directory, go into it and build with cmake:**  
   $ mkdir build  
   $ cd build  
   $ cmake ..  
@@ -28,22 +28,30 @@ CMakeList.txt.
 
 ###2. How to run
 
-- Go into build directory and execute KUNPLEx1.  
+After compiling, executables are created in build directory.
+You have two choices now. Eather type commands by yourself, or
+use macros you wrote beforehand.
+
+1. **Former case**
+  - **Execute KUNPLEx1.**  
   $ ./KUNPLEx1
 
-- and type in the commands:  
+  - **and type in the commands:**  
   Idle> /run/beamOn 10  
   Idle> ...  
   Idle> exit  
 
-- or  
+  - **or**  
   Idle> /control/execute run1.mac  
   ....  
   Idle> exit  
 
-- Execute KUNPLEx1  in the 'batch' mode from macro files (without visualization)  
-  $ ./KUNPLEx1 run2.mac  
-  $ ./KUNPLEx1 KUNPLEx1.in > KUNPLEx1.out  
+2. **Later case**
+  - **Execute KUNPLEx1 in the 'batch' mode from macro files (without visualization)**  
+  $ ./KUNPLEx1 macros/run1.mac  
+  
+  - **or if you want output**  
+  $ ./KUNPLEx1 macros/KUNPLEx1.in > KUNPLEx1.out  
 
 
 ###3. How to add classes
@@ -52,11 +60,11 @@ To add your own classes, open CMakeList.txt and add directory name which
 contains your classes under 'set(KUNPLEx_SOURCE_DIRECTORIES':  
 
     set(KUNPLEx_SOURCE_DIRECTORIES  
-    Ex1  
-    Ex1_Action  
-    [Name of your directory]  
-    ...  
-    )  
+      Ex1  
+      Ex1_Action  
+      [Name of your directory]  
+      ...  
+      )  
 
 
 ###4. How to add executables
