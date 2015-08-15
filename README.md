@@ -1,68 +1,68 @@
-$ README 2015-08-15 $
--------------------------------------------------------------------
-
-                           KUNPL EXAMPLE
-                           -------------
-
- Template for Korea University Nuclear Physics Lab (KUNPL) Geant4 
- primary users. This example was teted with version Geant4.10.02.
-
- NOTE that CMakeFile.txt contains dependency of ROOT. If you think this 
- causes problem, then set variable 'useROOT' from 'true' to 'false'
- in CMakeList.txt.
-
- - Author: JungWoo LEE (phyjics@gmail.com), Korea Univ.
+# Geant4 Starter for KUNPL
 
 
+These Geant4 examples are tutorial and template for Korea University 
+Nuclear Physics Lab (KUNPL) Geant4 primary users. 
 
- 1- HOW TO COMPILE
+Examples were tested with version Geant4.10.02.
 
-    - Go in to the KUNPLG4 directory (where this README file is in):
-        % cd [Path-to-KUNPLG4]
+NOTE that CMakeFile.txt contains dependency of ROOT. If you think this 
+causes problem, set variable 'useROOT' from 'true' to 'false' in 
+CMakeList.txt.
 
-    - Make build directory, go into it and build with CMake.
-        % mkdir build
-        % cd build
-        % cmake ..
-        % make 
+- Author: JungWoo LEE, Korea Univ. (phyjics@gmail.com)
 
+---
 
- 2- HOW TO RUN
+###1. How to compile
 
-    - Go intio build directory and execute KUNPLEx1.
-        % ./KUNPLEx1
-      and type in the commands:
-        Idle> /run/beamOn 10 
-        Idle> ...
-        Idle> exit
-      or
-        Idle> /control/execute run1.mac
-        ....
-        Idle> exit
+- Go into the KUNPLG4 directory (where this README.md is):  
+  $ cd [Path-to-KUNPLG4]
 
-    - Execute KUNPLEx1  in the 'batch' mode from macro files 
-      (without visualization)
-        % ./KUNPLEx1 run2.mac
-        % ./KUNPLEx1 KUNPLEx1.in > KUNPLEx1.out
+- Make build directory, go into it and build with cmake:
+  $ mkdir build  
+  $ cd build  
+  $ cmake ..  
+  $ make   
 
 
- 3- HOW TO ADD CLASSES
+###2. How to run
 
-   To add your own classes, open CMakeList.txt and add directory name which
-   contains your classes under 'set(KUNPLEx_SOURCE_DIRECTORIES':
+- Go into build directory and execute KUNPLEx1.  
+  $ ./KUNPLEx1
 
-      set(KUNPLEx_SOURCE_DIRECTORIES
-        Ex1
-        Ex1_Action
-        [Name of your directory]
-        ...
-        )
+- and type in the commands:  
+  Idle> /run/beamOn 10  
+  Idle> ...  
+  Idle> exit  
+
+- or  
+  Idle> /control/execute run1.mac  
+  ....  
+  Idle> exit  
+
+- Execute KUNPLEx1  in the 'batch' mode from macro files (without visualization)  
+  $ ./KUNPLEx1 run2.mac  
+  $ ./KUNPLEx1 KUNPLEx1.in > KUNPLEx1.out  
 
 
- 4- HOW TO ADD EXECUTABLES
+###3. How to add classes
 
-   To add your own executables, open CMakeList.txt and add executable name
-   (without filename extension) under 'set(KUNPLEx_EXECUTABLE':
+To add your own classes, open CMakeList.txt and add directory name which
+contains your classes under 'set(KUNPLEx_SOURCE_DIRECTORIES':  
+
+    set(KUNPLEx_SOURCE_DIRECTORIES  
+    Ex1  
+    Ex1_Action  
+    [Name of your directory]  
+    ...  
+    )  
+
+
+###4. How to add executables
+
+To add your own executables, open CMakeList.txt and add executable name
+(without filename extension) under 'set(KUNPLEx_EXECUTABLE':
 
       set(KUNPLEx_EXECUTABLES
         KUNPLEx1
@@ -72,10 +72,10 @@ $ README 2015-08-15 $
         )
 
 
- 5- HOW TO ADD SCRIPTS
+###5. How to add macros
 
-   To add your own scripts, add them in scripts directory, open CMakeList.txt 
-   and add scripts name under 'set(KUNPLEx_SCRIPTS':
+To add your own macros(.in or .mac), 1)add them in macros directory,
+2) open CMakeList.txt and add macro names under 'set(KUNPLEx_SCRIPTS':
 
       set(KUNPLEx_SCRIPTS
         scripts/init.mac
@@ -86,10 +86,3 @@ $ README 2015-08-15 $
         [Name of your script]
         ...
         )
-
-
- 6- USEFUL COMMANDS
-
-   - /run/printProgress [number]
-      : Print progress evenry [number] events
-
