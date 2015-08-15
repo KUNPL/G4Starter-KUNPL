@@ -33,6 +33,16 @@ set(KUNPLEx_EXECUTABLES
   )
 
 
+if(useROOT)
+  list(APPEND KUNPLEx_SOURCE_DIRECTORIES
+    Ex1_ROOT
+  )
+  list(APPEND KUNPLEx_EXECUTABLES
+    KUNPLEx1_ROOT
+  )
+endif(useROOT)
+
+
 #----------------------------------------------------------------------------
 # Set variables
 #

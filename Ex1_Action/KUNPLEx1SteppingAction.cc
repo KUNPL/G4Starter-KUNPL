@@ -45,21 +45,21 @@ void KUNPLEx1SteppingAction::UserSteppingAction(const G4Step* step)
 
 
 
-  G4String preVolName  = step -> GetPreStepPoint() -> GetPhysicalVolume() -> GetName();
-  G4double preTime     = step -> GetPreStepPoint() -> GetGlobalTime();
-  G4ThreeVector prePos = step -> GetPreStepPoint() -> GetPosition();
-  G4double preX        = prePos.x();
-  G4double preY        = prePos.y();
-  G4double preZ        = prePos.z();
-
-  G4cout << "  " << preVolName << ": "
-         << preX << ", " << preY << ", " << preZ << ", " << preTime << G4endl;
-
-
-
   G4StepStatus stat = step -> GetPostStepPoint() -> GetStepStatus();
   if (stat != fWorldBoundary) 
   {
+    G4String preVolName  = step -> GetPreStepPoint() -> GetPhysicalVolume() -> GetName();
+    G4double preTime     = step -> GetPreStepPoint() -> GetGlobalTime();
+    G4ThreeVector prePos = step -> GetPreStepPoint() -> GetPosition();
+    G4double preX        = prePos.x();
+    G4double preY        = prePos.y();
+    G4double preZ        = prePos.z();
+
+    G4cout << "  " << preVolName << ": "
+           << preX << ", " << preY << ", " << preZ << ", " << preTime << G4endl;
+
+
+
     G4String pstVolName  = step -> GetPostStepPoint() -> GetPhysicalVolume() -> GetName();
     G4ThreeVector pstPos = step -> GetPostStepPoint() -> GetPosition();
     G4double pstTime     = step -> GetPostStepPoint() -> GetGlobalTime();
