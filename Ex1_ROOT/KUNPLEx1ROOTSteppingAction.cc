@@ -6,7 +6,7 @@
 KUNPLEx1ROOTSteppingAction::KUNPLEx1ROOTSteppingAction()
 : G4UserSteppingAction()
 {
-  ana = KUNPLEx1ROOTAna::GetInstance();
+  fAna = KUNPLEx1ROOTAna::GetInstance();
 }
 
 KUNPLEx1ROOTSteppingAction::~KUNPLEx1ROOTSteppingAction()
@@ -21,7 +21,6 @@ void KUNPLEx1ROOTSteppingAction::UserSteppingAction(const G4Step* step)
     G4int parentID = step -> GetTrack() -> GetParentID();
     G4int pdg      = step -> GetTrack() -> GetDefinition() -> GetPDGEncoding();
 
-    G4double deltaE          = step -> GetDeltaEnergy(); 
     G4double totalEdep       = step -> GetTotalEnergyDeposit(); 
     G4double nonIonizingEdep = step -> GetNonIonizingEnergyDeposit(); 
 
@@ -49,10 +48,9 @@ void KUNPLEx1ROOTSteppingAction::UserSteppingAction(const G4Step* step)
     else if (pstVolName == "Detector") pstVolumeIdx = 1;
     else                               pstVolumeIdx = -1;
     
-    ana -> Fill(
+    fAna -> Fill(
       parentID,
       pdg,
-      deltaE,
       totalEdep,
       nonIonizingEdep, 
       preVolumeIdx,

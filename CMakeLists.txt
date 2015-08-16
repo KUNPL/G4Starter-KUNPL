@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Setup the project
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(G4Starter-KUNPL)
+project(G4KUNPL)
 
 set(useROOT true)
 
@@ -20,7 +20,7 @@ endif()
 
 
 #----------------------------------------------------------------------------
-# Set KUNPLEx source directories and executables
+# Set G4KUNPL source directories and executables
 #
 set(KUNPLEx_SOURCE_DIRECTORIES
   Ex1
@@ -29,17 +29,17 @@ set(KUNPLEx_SOURCE_DIRECTORIES
 
 set(KUNPLEx_EXECUTABLES
   KUNPLEx1
-  KUNPLEx1_Step
+  KUNPLEx1_Action
   )
 
 
 if(useROOT)
   list(APPEND KUNPLEx_SOURCE_DIRECTORIES
     Ex1_ROOT
-  )
+    )
   list(APPEND KUNPLEx_EXECUTABLES
     KUNPLEx1_ROOT
-  )
+    )
 endif(useROOT)
 
 
@@ -98,7 +98,7 @@ endforeach(_executable)
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
-# build KUNPLEx. This is so that we can run the executable directly because it
+# build G4KUNPL. This is so that we can run the executable directly because it
 # relies on these scripts being in the current working directory.
 #
 set(KUNPLEx_SCRIPTS
@@ -122,7 +122,7 @@ endforeach(_script)
 # For internal Geant4 use - but has no effect if you build this
 # example standalone
 #
-add_custom_target(KUNPLEx DEPENDS ${KUNPLEx_EXECUTABLES})
+add_custom_target(G4KUNPL DEPENDS ${KUNPLEx_EXECUTABLES})
 
 
 #----------------------------------------------------------------------------

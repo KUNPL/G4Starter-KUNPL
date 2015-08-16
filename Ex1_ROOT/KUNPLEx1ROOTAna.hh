@@ -16,7 +16,6 @@ class KUNPLEx1ROOTAna
     void Fill(
       Int_t    parentID,
       Int_t    pdg,
-      Double_t deltaE,
       Double_t totalEdep,
       Double_t nonIonizingEdep, 
       Int_t    preVolumeIdx,
@@ -31,6 +30,7 @@ class KUNPLEx1ROOTAna
       Double_t pstTime);
 
     void SetEventID(Int_t id);
+    void SetTrackID(Int_t id);
     void EndOfRun();
 
   private:
@@ -42,9 +42,9 @@ class KUNPLEx1ROOTAna
     TTree* fTree;
 
     Int_t    fEventID;
+    Int_t    fTrackID;
     Int_t    fParentID;
     Int_t    fPdg;
-    Double_t fDeltaE;
     Double_t fTotalEdep;
     Double_t fNonIonizingEdep;
     Int_t    fPreVolumeIdx;

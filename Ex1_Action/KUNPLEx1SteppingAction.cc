@@ -18,12 +18,8 @@ void KUNPLEx1SteppingAction::UserSteppingAction(const G4Step* step)
   G4int pdg      = step -> GetTrack() -> GetDefinition() -> GetPDGEncoding();
 
   /**
-   * GetDeltatEnergy()
-   *   : The energy lost by a particle (to the medium and to secondaries) during
-   *     a step.
-   *
    * GetTotalEnergyDeposit()
-   *   : The energy lost to the medium. 
+   *   : The energy lost to the medium.
    *     This is sum of
    *       1) the energy deposited by the energy loss process, and
    *       2) the energy lost by secondaries which have NOT been generated
@@ -36,12 +32,11 @@ void KUNPLEx1SteppingAction::UserSteppingAction(const G4Step* step)
    *   : The energy available for ionization.
    */
 
-  G4double deltaE          = step -> GetDeltaEnergy(); 
   G4double totalEdep       = step -> GetTotalEnergyDeposit(); 
   G4double nonIonizingEdep = step -> GetNonIonizingEnergyDeposit(); 
 
   G4cout << G4endl << pdg << "(" << parentID << "): "
-         << deltaE << ", " << totalEdep << ", " << nonIonizingEdep << G4endl; 
+         << totalEdep << ", " << nonIonizingEdep << G4endl; 
 
 
 

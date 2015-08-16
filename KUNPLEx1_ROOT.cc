@@ -1,6 +1,7 @@
 #include "KUNPLEx1DetectorConstruction.hh"
 #include "KUNPLEx1PrimaryGeneratorAction.hh"
 #include "KUNPLEx1ROOTSteppingAction.hh"
+#include "KUNPLEx1ROOTTrackingAction.hh"
 #include "KUNPLEx1ROOTEventAction.hh"
 
 #include "QBBC.hh"
@@ -29,6 +30,7 @@ int main(int argc,char** argv)
   runManager -> SetUserAction(new KUNPLEx1PrimaryGeneratorAction());
   // Add user actions
   runManager -> SetUserAction(new KUNPLEx1ROOTSteppingAction());
+  runManager -> SetUserAction(new KUNPLEx1ROOTTrackingAction());
   runManager -> SetUserAction(new KUNPLEx1ROOTEventAction());
     
   // Initialize G4 kernel

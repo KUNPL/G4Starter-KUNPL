@@ -16,5 +16,5 @@ class KUNPLEx1ROOTSteppingAction : public G4UserSteppingAction
     virtual void UserSteppingAction(const G4Step*);
 
   private:
-    KUNPLEx1ROOTAna* ana;
+    KUNPLEx1ROOTAna* fAna;
 };

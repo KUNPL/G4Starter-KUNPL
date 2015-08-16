@@ -17,5 +17,5 @@ class KUNPLEx1ROOTEventAction : public G4UserEventAction
     virtual void EndOfEventAction(const G4Event* event);
 
   private:
-    KUNPLEx1ROOTAna* ana;
+    KUNPLEx1ROOTAna* fAna;
 };

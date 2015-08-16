@@ -31,10 +31,9 @@ void KUNPLEx1ROOTAna::Init()
   fTree = new TTree("data",fName);
 
   fTree -> Branch("eventID",         &fEventID);
-
+  fTree -> Branch("trackID",         &fTrackID);
   fTree -> Branch("parentID",        &fParentID);
   fTree -> Branch("pdg",             &fPdg);
-  fTree -> Branch("deltaE",          &fDeltaE);
   fTree -> Branch("totalEdep",       &fTotalEdep);
   fTree -> Branch("nonIonizingEdep", &fNonIonizingEdep);
 
@@ -54,7 +53,6 @@ void KUNPLEx1ROOTAna::Init()
 void KUNPLEx1ROOTAna::Fill(
   Int_t    parentID,
   Int_t    pdg,
-  Double_t deltaE,
   Double_t totalEdep,
   Double_t nonIonizingEdep, 
   Int_t    preVolumeIdx,
@@ -70,7 +68,6 @@ void KUNPLEx1ROOTAna::Fill(
 {
   fParentID        = parentID;
   fPdg             = pdg;
-  fDeltaE          = deltaE;
   fTotalEdep       = totalEdep;
   fNonIonizingEdep = nonIonizingEdep; 
 
@@ -90,4 +87,5 @@ void KUNPLEx1ROOTAna::Fill(
 }
 
 void KUNPLEx1ROOTAna::SetEventID(Int_t id) { fEventID = id; }
+void KUNPLEx1ROOTAna::SetTrackID(Int_t id) { fTrackID = id; }
 void KUNPLEx1ROOTAna::EndOfRun() { fTree -> Write(); }

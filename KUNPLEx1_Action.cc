@@ -1,6 +1,7 @@
 #include "KUNPLEx1DetectorConstruction.hh"
 #include "KUNPLEx1PrimaryGeneratorAction.hh"
 #include "KUNPLEx1SteppingAction.hh"
+#include "KUNPLEx1TrackingAction.hh"
 
 #include "QBBC.hh"
 
@@ -25,6 +26,7 @@ int main(int argc,char** argv)
   runManager -> SetUserAction(new KUNPLEx1PrimaryGeneratorAction());
   // Add user actions
   runManager -> SetUserAction(new KUNPLEx1SteppingAction());
+  runManager -> SetUserAction(new KUNPLEx1TrackingAction());
     
   // Initialize G4 kernel
   runManager -> Initialize();
