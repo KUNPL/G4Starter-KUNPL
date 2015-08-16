@@ -2,9 +2,10 @@
 
 
 - These Geant4 examples are tutorial and template for Korea University 
-Nuclear Physics Lab (KUNPL) Geant4 primary users. 
+Nuclear Physics Laboratory (KUNPL) Geant4 primary users. 
 
 - Examples were tested with Geant4 version 4.10.02.
+The visualization will not work properly in lower versions.
 
 - CMakeList contains dependency of ROOT. If you think this causes
 problem (you may not have ROOT for example), set 
@@ -16,7 +17,7 @@ variable 'useROOT' from 'true' to 'false' in CMakeList.txt.
 
 - Go into the G4Starter-KUNPL directory:
   ```sh
-  > cd [Path-to-KUNPLG4]
+  > cd [Path-to-G4Starter-KUNPL]
   ```
 
 - Make build directory, go into it and build with cmake:
@@ -77,7 +78,8 @@ contains your classes under 'set(KUNPLEx_SOURCE_DIRECTORIES':
 set(KUNPLEx_SOURCE_DIRECTORIES  
   Ex1  
   Ex1_Action  
-  [Name of your directory]  
+  [directory-1]  
+  [directory-2]  
   ...  
   )  
 ```
@@ -90,8 +92,9 @@ To add your own executables, open CMakeList.txt and add executable name
 ```cmake
 set(KUNPLEx_EXECUTABLES
   KUNPLEx1
-  KUNPLEx1_Action
-  [Name of your executable]
+  KUNPLEx1_Step
+  [executable-1]
+  [executable-2]
   ...
   )
 ```
@@ -99,17 +102,18 @@ set(KUNPLEx_EXECUTABLES
 
 ###5. How to add macros
 
-To add your own macros(.in or .mac), 1) add them in macros directory,
-2) open CMakeList.txt and add macro names under 'set(KUNPLEx_SCRIPTS':
+To add your own macros(.in or .mac), 1) add them in macros directory (to keep
+directory clean!), 2) open CMakeList.txt and add macro names under 'set(KUNPLEx_SCRIPTS':
 
 ```cmake
 set(KUNPLEx_SCRIPTS
-  scripts/init.mac
-  scripts/init_vis.mac
-  scripts/vis.mac
-  scripts/run1.mac
-  scripts/run2.mac
-  [Name of your script]
+  macros/init.mac
+  macros/init_vis.mac
+  macros/vis.mac
+  macros/run1.mac
+  macros/run2.mac
+  macros/[macro-1]
+  macros/[macro-2]
   ...
   )
 ```
