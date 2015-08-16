@@ -25,11 +25,13 @@ endif()
 set(KUNPLEx_SOURCE_DIRECTORIES
   Ex1
   Ex1_Action
+  Ex2
   )
 
 set(KUNPLEx_EXECUTABLES
   KUNPLEx1
   KUNPLEx1_Action
+  KUNPLEx2
   )
 
 
@@ -106,7 +108,11 @@ set(KUNPLEx_SCRIPTS
   macros/init_vis.mac
   macros/vis.mac
   macros/run1.mac
-  macros/run2.mac
+  #macros/run2.mac
+
+  macros/init2.mac
+  macros/init_vis2.mac
+  macros/vis2.mac
   )
 
 foreach(_script ${KUNPLEx_SCRIPTS})
