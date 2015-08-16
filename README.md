@@ -20,10 +20,20 @@ variable 'useROOT' from 'true' to 'false' in CMakeList.txt.
   > cd [Path-to-G4Starter-KUNPL]
   ```
 
-- Make build directory, go into it and build with cmake:
+- Make build directory and go into it:
   ```sh
   > mkdir build  
   > cd build  
+  ```
+
+- Set Geant4 and ROOT enviroment. For KUNPL server you would do:
+  ```sh
+  > geant41000p02
+  > root5
+  ```
+
+- Build with cmake:
+  ```sh
   > cmake ..  
   > make   
   ```
