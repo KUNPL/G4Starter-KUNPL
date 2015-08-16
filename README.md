@@ -13,14 +13,6 @@ variable 'useROOT' from 'true' to 'false' in CMakeList.txt.
 
 ---
 
-
-###0. How to download
-
-- Clone from Github.
-  ```sh
-  git clone https://github.com/KUNPL/G4Starter-KUNPL.git .
-  ```
-
 ###1. How to compile
 
 - Go into the G4Starter-KUNPL directory:
