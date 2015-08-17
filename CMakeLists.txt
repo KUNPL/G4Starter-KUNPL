@@ -24,7 +24,6 @@ endif()
 #
 set(KUNPLEx_SOURCE_DIRECTORIES
   Ex1
-  Ex1_Action
   Ex2
   )
 
@@ -37,7 +36,7 @@ set(KUNPLEx_EXECUTABLES
 
 if(useROOT)
   list(APPEND KUNPLEx_SOURCE_DIRECTORIES
-    Ex1_ROOT
+    Ex1/ROOT
     )
   list(APPEND KUNPLEx_EXECUTABLES
     KUNPLEx1_ROOT
