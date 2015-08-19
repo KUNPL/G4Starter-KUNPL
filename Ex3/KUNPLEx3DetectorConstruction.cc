@@ -1,4 +1,4 @@
-#include "KUNPLEx2DetectorConstruction.hh"
+#include "KUNPLEx3DetectorConstruction.hh"
 
 #include "G4RunManager.hh"
 #include "G4NistManager.hh"
@@ -12,17 +12,25 @@
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4Region.hh"
+#include "G4RotationMatrix.hh"
+#include "G4UniformElectricField.hh"
+#include "G4FieldManager.hh"
+#include "G4ClassicalRK4.hh"
+#include "G4EqMagElectricField.hh"
+#include "G4TransportationManager.hh"
+#include "G4MagIntegratorDriver.hh"
+#include "G4ChordFinder.hh"
 
-KUNPLEx2DetectorConstruction::KUNPLEx2DetectorConstruction()
+KUNPLEx3DetectorConstruction::KUNPLEx3DetectorConstruction()
 : G4VUserDetectorConstruction()
 {
 }
 
-KUNPLEx2DetectorConstruction::~KUNPLEx2DetectorConstruction()
+KUNPLEx3DetectorConstruction::~KUNPLEx3DetectorConstruction()
 {
 }
 
-G4VPhysicalVolume* KUNPLEx2DetectorConstruction::Construct()
+G4VPhysicalVolume* KUNPLEx3DetectorConstruction::Construct()
 {  
   // -----------------------------------------------------
   // World
@@ -82,15 +90,14 @@ G4VPhysicalVolume* KUNPLEx2DetectorConstruction::Construct()
   C10 -> AddMaterial(ArGas,  mfAr);
   C10 -> AddMaterial(CO2Gas, mfCO2);
 
-  G4double tTwistedAngle = 30 * deg;
-  G4double tDx = 300 * mm;
-  G4double tDy = 300 * mm;
-  G4double tDz = 500 * mm;
+  G4double tRMin = 0   * mm;
+  G4double tRMax = 200 * mm;
+  G4double tRDz  = 500 * mm;
 
   G4VSolid* solidTracker =
-    new G4TwistedBox("Tracker", tTwistedAngle, tDx, tDy, tDz);
+    new G4Tubs("Tracker", tRMin, tRMax, tRDz, 0, 180);
 
-  G4double tStepMax = 1 * mm;
+  G4double tStepMax = 1 * m;
 
   G4LogicalVolume* logicTracker =                         
     new G4LogicalVolume(solidTracker,
@@ -103,9 +110,45 @@ G4VPhysicalVolume* KUNPLEx2DetectorConstruction::Construct()
   G4Region* regionTracker = new G4Region("Tracker");
   logicTracker -> SetRegion(regionTracker);
   regionTracker -> AddRootLogicalVolume(logicTracker);
+
+  /*
+  G4UniformElectricField* tField =
+    new G4UniformElectricField(G4ThreeVector(0,0,350 * volt));
+
+  G4FieldManager* fieldMan = new G4FieldManager();
+  fieldMan -> SetDetectorField(tField);
+  fieldMan -> SetChordFinder(tField);
+  */
+
+  G4UniformElectricField *EMField = 
+    //new G4UniformElectricField(G4ThreeVector(0., 0., 350*volt/cm));
+    new G4UniformElectricField(G4ThreeVector(0., 180 * volt / cm, 0.));
+
+  G4EqMagElectricField* equation = 
+    new G4EqMagElectricField(EMField);
+
+  G4ClassicalRK4 *stepper = 
+    new G4ClassicalRK4(equation, 8);
+
+  G4FieldManager* fieldMgr = 
+    G4TransportationManager::GetTransportationManager() -> GetFieldManager();
+
+  fieldMgr -> SetDetectorField(EMField);
+
+  G4double minStep = 1 * m;
+  G4MagInt_Driver* driver = 
+    new G4MagInt_Driver(minStep, stepper, stepper -> GetNumberOfVariables());
+
+  G4ChordFinder *chordFinder = new G4ChordFinder(driver); 
+  fieldMgr -> SetChordFinder(chordFinder);
+
+  G4RotationMatrix* rotTracker = new G4RotationMatrix();
+  rotTracker -> rotateX(90 * deg);
+
+  logicTracker -> SetFieldManager(fieldMgr, 0);
                                    
-    new G4PVPlacement(0,
-                      G4ThreeVector(0, 0, 2*tDz),
+    new G4PVPlacement(rotTracker,
+                      G4ThreeVector(0, 0, 0),
                       logicTracker,
                       "Tracker",
                       logicWorld,

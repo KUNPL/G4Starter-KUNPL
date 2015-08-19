@@ -25,12 +25,14 @@ endif()
 set(KUNPLEx_SOURCE_DIRECTORIES
   Ex1
   Ex2
+  Ex3
   )
 
 set(KUNPLEx_EXECUTABLES
   KUNPLEx1
   KUNPLEx1_Action
   KUNPLEx2
+  KUNPLEx3
   )
 
 

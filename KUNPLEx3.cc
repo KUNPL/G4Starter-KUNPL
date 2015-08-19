@@ -1,6 +1,6 @@
-#include "KUNPLEx2DetectorConstruction.hh"
-#include "KUNPLEx2PrimaryGeneratorAction.hh"
-#include "KUNPLEx2PhysicsList.hh"
+#include "KUNPLEx3DetectorConstruction.hh"
+#include "KUNPLEx3PrimaryGeneratorAction.hh"
+#include "KUNPLEx3PhysicsList.hh"
 #include "QGSP_BERT.hh"
 
 #include "G4StepLimiterPhysics.hh"
@@ -21,14 +21,14 @@ int main(int argc,char** argv)
   G4RunManager* runManager = new G4RunManager;
 
   // Set physics list with step limiter
-  //G4VModularPhysicsList* physicsList = new KUNPLEx2PhysicsList();
+  //G4VModularPhysicsList* physicsList = new KUNPLEx3PhysicsList();
   G4VModularPhysicsList* physicsList = new QGSP_BERT;
   physicsList -> RegisterPhysics(new G4StepLimiterPhysics());
 
   // Set mandatory initialization and action classes
-  runManager -> SetUserInitialization(new KUNPLEx2DetectorConstruction());
+  runManager -> SetUserInitialization(new KUNPLEx3DetectorConstruction());
   runManager -> SetUserInitialization(physicsList); // Physics list
-  runManager -> SetUserAction(new KUNPLEx2PrimaryGeneratorAction());
+  runManager -> SetUserAction(new KUNPLEx3PrimaryGeneratorAction());
     
   // Initialize G4 kernel
   runManager -> Initialize();

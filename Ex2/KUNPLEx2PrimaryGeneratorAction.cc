@@ -1,4 +1,4 @@
-#include "KUNPLEx1PrimaryGeneratorAction.hh"
+#include "KUNPLEx2PrimaryGeneratorAction.hh"
 
 #include "G4LogicalVolumeStore.hh"
 #include "G4LogicalVolume.hh"
@@ -10,7 +10,7 @@
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
 
-KUNPLEx1PrimaryGeneratorAction::KUNPLEx1PrimaryGeneratorAction()
+KUNPLEx2PrimaryGeneratorAction::KUNPLEx2PrimaryGeneratorAction()
 : G4VUserPrimaryGeneratorAction(),
   fParticleGun(0)
 {
@@ -21,19 +21,19 @@ KUNPLEx1PrimaryGeneratorAction::KUNPLEx1PrimaryGeneratorAction()
   G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
   G4String particleName;
   G4ParticleDefinition* particle
-    = particleTable -> FindParticle(particleName = "e-");
+    = particleTable -> FindParticle(particleName = "proton");
 
   fParticleGun -> SetParticleDefinition(particle);
   fParticleGun -> SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
-  fParticleGun -> SetParticleEnergy(200.*MeV);
+  fParticleGun -> SetParticleEnergy(100.*MeV);
 }
 
-KUNPLEx1PrimaryGeneratorAction::~KUNPLEx1PrimaryGeneratorAction()
+KUNPLEx2PrimaryGeneratorAction::~KUNPLEx2PrimaryGeneratorAction()
 {
   delete fParticleGun;
 }
 
-void KUNPLEx1PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
+void KUNPLEx2PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
   //this function is called at the begining of each event
 
