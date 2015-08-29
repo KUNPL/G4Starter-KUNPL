@@ -1,5 +1,6 @@
 # Geant4 Starter for KUNPL
 
+- For English version click [HERE](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/README_ENG.md).
 
 - G4Starter-KUNPL 프로젝트는 Geant4 를 이제 막 시작하려는 고려대학교 
   핵물리연구실 학생들을 위한 Geant4 예제이자 템플릿입니다.
