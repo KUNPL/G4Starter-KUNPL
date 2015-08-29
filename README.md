@@ -1,95 +1,97 @@
 # Geant4 Starter for KUNPL
 
 
-- These Geant4 examples are tutorial and template for Korea University 
-Nuclear Physics Laboratory (KUNPL) Geant4 primary users. 
+- G4Starter-KUNPL 프로젝트는 Geant4 를 이제 막 시작하려는 고려대학교 
+  핵물리연구실 학생들을 위한 Geant4 예제이자 템플릿입니다.
 
-- Examples were tested with Geant4 version 4.10.02.
-The visualization will not work properly in lower versions.
+- 여기에 있는 예제들을 Geant4.10.02 과 ROOT5.34.21에서 테스트 되었으며
+  이보다 낮은 버젼을 사용할 경우 이벤트 컴파일이 및 이벤트 디스플레이가 
+  제대로 작동하지 않을 수 있습니다.
 
-- CMakeList contains dependency of ROOT. If you think this causes
-problem (you may not have ROOT for example), set 
-variable 'useROOT' from 'true' to 'false' in CMakeList.txt.
+- CMakeList.txt 에는 ROOT 를 사용할 수 있도록 짜여져있는데 이 때문에 문제가
+  일어난다고 생각한다면 변수 'useROOT' 를 'true' 에서 'false' 로 바꾸면 
+  ROOT 의존성을 끌 수 있습니다.
 
-- If you want your own template without holding KUNPL examples, use 
-create_template.py macro. Just run macro by typing 
-'./create_template.py [project]' and directory with name, [project] will
-be created. Move directory to any where and you can use it just like
-G4Starter-KUNPL project.
+- G4Starter-KUNPL 에 있는 예제들을 제외한 나만의 템플릿을 만들고 싶은 경우
+  'create_template.py' 메크로를 사용하면 됩니다. 터미널에서
+  './create_template.py [프로젝트]' 와 같이 실행하면 [프로젝트] 라는 폴더가
+  만들어지며 폴더를 원하는 곳으로 옮겨 G4Starter-KUNPL 과 같은 방법으로 사용
+  할 수 있습니다.
 
 
 ---
 
-###1. How to compile
+###1. 컴파일
 
-- Go into the G4Starter-KUNPL directory:
+- G4Starter-KUNPL 경로로 들어간다:
   ```sh
   > cd [Path-to-G4Starter-KUNPL]
   ```
 
-- Make build directory and go into it:
+- build 폴더를 만들고 들어간다.
   ```sh
   > mkdir build  
   > cd build  
   ```
 
-- Set Geant4 and ROOT enviroment. For KUNPL server you would do:
+- Geant4 와 ROOT 환경을 설정한다. 핵물리연구실 서버의 경우 다음과 같다:
   ```sh
   > geant41000p02
   > root5
   ```
 
-- Build with cmake:
+- cmake!
   ```sh
   > cmake ..  
   > make   
   ```
 
 
-###2. How to run
+###2. 실행
 
-After compiling, executables are created in build directory.
-You have two choices now. Eather 1) type commands by yourself, 
-2) or use macros you wrote beforehand.
+컴파일을 마친 후 실행파일 들이 build 폴더 안에 생성되었을 것이다.
+이제 두가지 방법으로 실행을 할 수 있는데 1) 실행파일을 실행 후 직접
+명령어들을 치는 방법과 2) 전에 써놨던 매크로를 이용해서 실행하는
+방법이 있다.
 
-#####1) Former case
-- Execute executable and type in the commands:
+#####1) 첫번째 방법
+- 직접 명령어를 치는 방법:
   ```sh
   > ./KUNPLEx1
   
-  Starting Geant4 kernal...
+  Geant4 kernal 을 실행중...
   
   Idle> /run/beamOn 10  
   Idle> ...  
   Idle> exit  
   ```
   
-#####2) Later case
-- Execute executable and load macro file
+#####2) 두번째 방법
+- 실행을 한 후에 매크로 파일을 불러오는 방법:
   ```sh
   > ./KUNPLEx1
   
-  Starting Geant4 kernal...
+  Geant4 kernal 을 실행중...
   
   Idle> /control/execute macros/run1.mac  
   ....  
   Idle> exit  
   ```
 
-- Execute executable in the 'batch' mode from macro files:
+- 매크로 파일을 실행파일과 함께 실행하는 방법:
   ```sh
   > ./KUNPLEx1 macros/run1.mac  
   ```
 
-- Or if you want output, you may do:
+- 아웃픗을 원하는 경우: 
   ```sh
   > ./KUNPLEx1 macros/KUNPLEx1.in > KUNPLEx1.out  
   ```
 
-###3. How to add classes
+###3. 클래스를 추가하는 방법
 
-To add your own classes, open CMakeList.txt and add directory name which
-contains your classes under 'set(KUNPLEx_SOURCE_DIRECTORIES':  
+CMakeList.txt 를 열어서 클래스 이름들을 
+'set(KUNPLEx_SOURCE_DIRECTORIES' 아래에 추가한다: 
 
 ```cmake
 set(KUNPLEx_SOURCE_DIRECTORIES  
@@ -101,10 +103,10 @@ set(KUNPLEx_SOURCE_DIRECTORIES
   )  
 ```
 
-###4. How to add executables
+###4. 실행파일을 추가하는 방법
 
-To add your own executables, open CMakeList.txt and add executable name
-(without filename extension) under 'set(KUNPLEx_EXECUTABLE':
+CMakeList.txt 를 열어서 확장자를 제외한 실행파일 이름을
+'set(KUNPLEx_EXECUTABLE' 아래에 추가한다: 
 
 ```cmake
 set(KUNPLEx_EXECUTABLES
@@ -117,10 +119,12 @@ set(KUNPLEx_EXECUTABLES
 ```
 
 
-###5. How to add macros
+###5. 매크로 파일을 추가하는 방법
 
-To add your own macros(.in or .mac), 1) add them in macros directory (to keep
-directory clean!), 2) open CMakeList.txt and add macro names under 'set(KUNPLEx_SCRIPTS':
+CMakeList.txt 를 열어서 확장자를 제외한 실행파일 이름을
+'set(KUNPLEx_SCRIPTS' 아래에 추가한다. 이 예제들의 경우
+폴더가 더러워지는 것을 방지하여 macro 폴더를 생성한 후
+모든 매크로 파일을 넣어두었다:
 
 ```cmake
 set(KUNPLEx_SCRIPTS
