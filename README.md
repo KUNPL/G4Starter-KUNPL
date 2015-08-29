@@ -11,6 +11,13 @@ The visualization will not work properly in lower versions.
 problem (you may not have ROOT for example), set 
 variable 'useROOT' from 'true' to 'false' in CMakeList.txt.
 
+- If you want your own template without holding KUNPL examples, use 
+create_template.py macro. Just run macro by typing 
+'./create_template.py [project]' and directory with name, [project] will
+be created. Move directory to any where and you can use it just like
+G4Starter-KUNPL project.
+
+
 ---
 
 ###1. How to compile
