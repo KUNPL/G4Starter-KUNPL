@@ -331,7 +331,7 @@ copy_file.close()
 
 
 #-------------------------------------------------------
-template_name = 'Ex1/ROOT/KUNPLEx1Ana.cc'
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTAna.cc'
 template_file = open(template_name, 'r')
 copy_name = project + '/src/' + project + 'Ana.cc'
 copy_file = open(copy_name, 'w')
@@ -347,7 +347,7 @@ copy_file.close()
 
 
 #-------------------------------------------------------
-template_name = 'Ex1/ROOT/KUNPLEx1Ana.hh'
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTAna.hh'
 template_file = open(template_name, 'r')
 copy_name = project + '/src/' + project + 'Ana.hh'
 copy_file = open(copy_name, 'w')
