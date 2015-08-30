@@ -327,3 +327,131 @@ while 1 :
     line = line.replace('KUNPLEx1', project)
   copy_file.write(line)
 copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1Ana.cc'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'Ana.cc'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1Ana.hh'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'Ana.hh'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTSteppingAction.cc'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'SteppingAction.cc'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTSteppingAction.hh'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'SteppingAction.hh'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTTrackingAction.cc'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'TrackingAction.cc'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTEventAction.hh'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'EventAction.hh'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTEventAction.cc'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'EventAction.cc'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
+
+
+
+#-------------------------------------------------------
+template_name = 'Ex1/ROOT/KUNPLEx1ROOTTrackingAction.hh'
+template_file = open(template_name, 'r')
+copy_name = project + '/src/' + project + 'TrackingAction.hh'
+copy_file = open(copy_name, 'w')
+while 1 :
+  line = template_file.readline()
+  if not line : 
+    break # break if oef
+  if line.find('KUNPLEx1ROOT') is not -1 :
+    line = line.replace('KUNPLEx1ROOT', project)
+  copy_file.write(line)
+copy_file.close()
