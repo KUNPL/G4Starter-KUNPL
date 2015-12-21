@@ -28,7 +28,8 @@ void KUNPLEx1ROOTAna::Init()
   TString fileName = fName + ".root";
 
   fFile = new TFile(fileName,"recreate");
-  fTree = new TTree("data",fName);
+  fTree  = new TTree("step",  fName);
+  fTree2 = new TTree("track", fName);
 
   fTree -> Branch("eventID",         &fEventID);
   fTree -> Branch("trackID",         &fTrackID);
@@ -48,6 +49,30 @@ void KUNPLEx1ROOTAna::Init()
   fTree -> Branch("pstY",            &fPstY);
   fTree -> Branch("pstZ",            &fPstZ);
   fTree -> Branch("pstTime",         &fPstTime);
+
+  fTree2 -> Branch("eventID",         &fEventID);
+  fTree2 -> Branch("trackID",         &fTrackID);
+  fTree2 -> Branch("parentID",        &fParentID);
+  fTree2 -> Branch("pdg",             &fPdg);
+  fTree2 -> Branch("pX",    &fPX);
+  fTree2 -> Branch("pY",    &fPY);
+  fTree2 -> Branch("pZ",    &fPZ);
+}
+
+void KUNPLEx1ROOTAna::Fill(
+  Int_t    parentID,
+  Int_t    pdg,
+  Double_t pX,
+  Double_t pY,
+  Double_t pZ)
+{
+  fParentID        = parentID;
+  fPdg             = pdg;
+  fPX            = pX;
+  fPY            = pY;
+  fPZ            = pZ;
+
+  fTree2 -> Fill();
 }
 
 void KUNPLEx1ROOTAna::Fill(
@@ -88,4 +113,4 @@ void KUNPLEx1ROOTAna::Fill(
 
 void KUNPLEx1ROOTAna::SetEventID(Int_t id) { fEventID = id; }
 void KUNPLEx1ROOTAna::SetTrackID(Int_t id) { fTrackID = id; }
-void KUNPLEx1ROOTAna::EndOfRun() { fTree -> Write(); }
+void KUNPLEx1ROOTAna::EndOfRun() { fTree -> Write(); fTree2 -> Write(); }

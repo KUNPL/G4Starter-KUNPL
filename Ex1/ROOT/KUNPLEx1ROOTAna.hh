@@ -16,6 +16,13 @@ class KUNPLEx1ROOTAna
     void Fill(
       Int_t    parentID,
       Int_t    pdg,
+      Double_t pX,
+      Double_t pY,
+      Double_t pZ);
+
+    void Fill(
+      Int_t    parentID,
+      Int_t    pdg,
       Double_t totalEdep,
       Double_t nonIonizingEdep, 
       Int_t    preVolumeIdx,
@@ -40,6 +47,7 @@ class KUNPLEx1ROOTAna
 
     TFile* fFile;
     TTree* fTree;
+    TTree* fTree2;
 
     Int_t    fEventID;
     Int_t    fTrackID;
@@ -57,6 +65,10 @@ class KUNPLEx1ROOTAna
     Double_t fPstY;
     Double_t fPstZ;
     Double_t fPstTime;
+
+    Double_t fPX;
+    Double_t fPY;
+    Double_t fPZ;
 
     static KUNPLEx1ROOTAna* fInstance;
 };
