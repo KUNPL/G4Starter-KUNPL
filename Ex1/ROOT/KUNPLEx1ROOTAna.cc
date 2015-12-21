@@ -35,6 +35,7 @@ void KUNPLEx1ROOTAna::Init()
   fTree -> Branch("trackID",         &fTrackID);
   fTree -> Branch("parentID",        &fParentID);
   fTree -> Branch("pdg",             &fPdg);
+  fTree -> Branch("process",         &fProcess);
   fTree -> Branch("totalEdep",       &fTotalEdep);
   fTree -> Branch("nonIonizingEdep", &fNonIonizingEdep);
 
@@ -54,9 +55,9 @@ void KUNPLEx1ROOTAna::Init()
   fTree2 -> Branch("trackID",         &fTrackID);
   fTree2 -> Branch("parentID",        &fParentID);
   fTree2 -> Branch("pdg",             &fPdg);
-  fTree2 -> Branch("pX",    &fPX);
-  fTree2 -> Branch("pY",    &fPY);
-  fTree2 -> Branch("pZ",    &fPZ);
+  fTree2 -> Branch("pX",              &fPX);
+  fTree2 -> Branch("pY",              &fPY);
+  fTree2 -> Branch("pZ",              &fPZ);
 }
 
 void KUNPLEx1ROOTAna::Fill(
@@ -66,8 +67,8 @@ void KUNPLEx1ROOTAna::Fill(
   Double_t pY,
   Double_t pZ)
 {
-  fParentID        = parentID;
-  fPdg             = pdg;
+  fParentID      = parentID;
+  fPdg           = pdg;
   fPX            = pX;
   fPY            = pY;
   fPZ            = pZ;
@@ -78,6 +79,7 @@ void KUNPLEx1ROOTAna::Fill(
 void KUNPLEx1ROOTAna::Fill(
   Int_t    parentID,
   Int_t    pdg,
+  TString  process,
   Double_t totalEdep,
   Double_t nonIonizingEdep, 
   Int_t    preVolumeIdx,
@@ -93,6 +95,7 @@ void KUNPLEx1ROOTAna::Fill(
 {
   fParentID        = parentID;
   fPdg             = pdg;
+  fProcess         = process;
   fTotalEdep       = totalEdep;
   fNonIonizingEdep = nonIonizingEdep; 
 

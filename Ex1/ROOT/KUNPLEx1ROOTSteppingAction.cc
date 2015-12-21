@@ -38,6 +38,8 @@ void KUNPLEx1ROOTSteppingAction::UserSteppingAction(const G4Step* step)
     G4double pstY        = pstPos.y();
     G4double pstZ        = pstPos.z();
 
+    G4String processName = step -> GetPostStepPoint() -> GetProcessDefinedStep() -> GetProcessName();
+
     G4int preVolumeIdx = 0;
     if      (preVolName == "World")    preVolumeIdx = 0;
     else if (preVolName == "Detector") preVolumeIdx = 1;
@@ -51,6 +53,7 @@ void KUNPLEx1ROOTSteppingAction::UserSteppingAction(const G4Step* step)
     fAna -> Fill(
       parentID,
       pdg,
+      processName,
       totalEdep,
       nonIonizingEdep, 
       preVolumeIdx,

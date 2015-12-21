@@ -23,6 +23,7 @@ class KUNPLEx1ROOTAna
     void Fill(
       Int_t    parentID,
       Int_t    pdg,
+      TString  process,
       Double_t totalEdep,
       Double_t nonIonizingEdep, 
       Int_t    preVolumeIdx,
@@ -53,6 +54,7 @@ class KUNPLEx1ROOTAna
     Int_t    fTrackID;
     Int_t    fParentID;
     Int_t    fPdg;
+    TString  fProcess;
     Double_t fTotalEdep;
     Double_t fNonIonizingEdep;
     Int_t    fPreVolumeIdx;
