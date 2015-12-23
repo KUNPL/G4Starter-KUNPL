@@ -11,7 +11,7 @@
 #include "G4UIExecutive.hh"
 #include "Randomize.hh"
 
-int main(int argc,char** argv)
+int main(int argc, char** argv)
 {
   // Choose the Random engine
   G4Random::setTheEngine(new CLHEP::RanecuEngine);
