@@ -1,6 +1,6 @@
 #검출기 만들기
 
-검출기를 만드는 클래스는 KooDetectorConstruction이다. 먼저 코드를 보자.
+검출기를 만드는 클래스는 KooDetectorConstruction이다. 먼저 헤더파일을 보자.
 
 ### KooDetectorConstruction.hh
 ```c++
@@ -21,6 +21,8 @@ class KooDetectorConstruction : public G4VUserDetectorConstruction
     virtual G4VPhysicalVolume* Construct();
 };
 ```
+
+DetectorConstruction은 Geant4 시뮬레이션에
 
 ### KooDetectorConstruction.cc
 ```c++
