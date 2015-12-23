@@ -5,6 +5,6 @@
 ### 3 장. [코딩 시작하기](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter3-Start.md)
 ### 4 장. [어떤 파일을 만들어야 할까](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter4-SimulationCode.md)
 ### 5 장. [검출기 만들기 - Detector Construction](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter5-DetectorConstruction.md)
-### 6 장. [입자 쏘기 - Primary Generator](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter5-PrimaryGeneratorAction.md)
+### 6 장. [입자 쏘기 - Primary Generator](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter6-PrimaryGeneratorAction.md)
 ### 7 장. [이벤트와 트랙 - Event Action과 Tracking Action]()
 ### 8 장. [스텝 - Stepping Action]()
