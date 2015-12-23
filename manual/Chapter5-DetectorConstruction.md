@@ -115,7 +115,7 @@ G4VPhysicalVolume* KooDetectorConstruction::Construct()
 
 ```
 
-먼저 물질의 재료가 될 G4Material을 먼저 정의해야 한다. 다행히도 Geant4에는 기본 물질들의 정의를 해주는 Nist 데이터베이스가 있는데 공기의 경우도 이를 통해서 공정의 할 수 있다. 각 물질에대한 이름은 Geant4 메뉴얼에서 찾을 수 있다.
+먼저 물질의 재료가 될 G4Material을 정의해야 한다. 다행히 Geant4에는 Nist 데이터베이스에 기본 재료의 정보들이 저장되어 있다. 공기의 경우 Nist 데이터베이스를 통해서 정의 할 수 있다(G4_AIR). 각 재료에 대응 하는 이름은 Geant4 메뉴얼에서 찾을 수 있다.
 
 ```c++
   G4NistManager* nist = G4NistManager::Instance();
@@ -131,7 +131,7 @@ G4VPhysicalVolume* KooDetectorConstruction::Construct()
   G4Element *element_H  = new G4Element("Hydrogen", "H",  1,  1.00794*g/mole);
 ```
 
-그 다음은 재료, G4Material을 정의 한다. 각 변수는 이름, 단위부피당 질량, 원소의 개수, 상태, 온도다. 추가로 위에서 정의한 원소들을 AddElement로 추가한다. 이때 옆에 들어가는 숫자는 원소의 개수가 된다.
+그 다음은 재료, G4Material을 정의 한다. 각 변수는 이름, 단위부피당 질량, 원소의 개수, 상태, 온도다. 그리고 위에서 정의한 원소들을 AddElement로 추가한다. 옆에 들어가는 숫자는 원소의 개수다.
 
 ```c++
   G4Material *detector_mat = new G4Material("Scintillator", 1.05*g/cm3, 2, kStateSolid, labTemp);
@@ -178,6 +178,6 @@ Logical volume은 그 특성을 결정하는데 위 코드는 solid volume과 �
 
 마지막으로 Physical volume은 logical volume을 위치시키는 일을 한다. 하나의 logical volume을 가지고 여러개를 만드는 것도 가능하다(이 경우 copy number를 다르게 해준다). 또 상위 물질(Mother volume)을 입력하여 물질의 상하관계를 알려주어야 한다. World의 경우는 상위 물질이 없지만 Detector의 경우 상위 물질은 World가 된다.
 
-Construct가 반환해야 할 volume은 가장 상위 물질인 World의 Physical volume이다. World의 Physical volume은 모든 정보를 가지고 있기 때문에 다른 검출기의 Physical volume은 new로 만들기만 하고 변수로 받지않아도 메모리에 남게 된다.
+Construct가 반환해야 할 volume은 가장 상위 물질인 World의 Physical volume이다. World의 Physical volume은 모든 정보를 가지고 있기 때문에 다른 검출기의 Physical volume은 new로 만들기만 하고 변수로 받지않아도 메모리에 남는다.
 
 ### [다음](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter6-PrimaryGeneratorAction.md)
