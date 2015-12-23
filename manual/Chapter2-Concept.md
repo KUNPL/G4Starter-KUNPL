@@ -1,4 +1,4 @@
-# 3 장. Geant4의 컨셉
+# 2 장. Geant4의 컨셉
 
 ### 정의해야 하는 것들
 
@@ -40,4 +40,4 @@ Geant4 시뮬레이션에서 우리가 수동적으로 다룰 수 있는 단계�
 
 앞서 말했듯이 스텝은 두개의 점으로 이루어져 있다. 하나의 트랙은 스텝의 연속으로 이루어져 있으므로 한 스텝의 끝점은 그 다음 스텝의 시작점이 된다.
 
-### [다음](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter4-SimulationCode.md)
+### [다음](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter3-Start.md)
