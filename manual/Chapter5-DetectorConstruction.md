@@ -124,7 +124,7 @@ G4VPhysicalVolume* KooDetectorConstruction::Construct()
   G4Material* world_mat = nist -> FindOrBuildMaterial("G4_AIR");
 ```
 
-하지만 검출기의 재료가 될 C10H11은 Nist 데이터 베이스에 존재하지 않는다. 이런 경우에는 다음과 같이 일일이 재료를 정의해야 한다. 먼저 탄소와 수소 원소를 G4Element로 정의 한다. 각 변수는 이름, 기호, z-number, molecular masss다.
+하지만 검출기의 재료가 될 C10H11은 Nist 데이터 베이스에 존재하지 않는다. 이런 경우에는 다음과 같이 일일이 재료를 정의해야 한다. 먼저 탄소와 수소 원소를 G4Element로 정의 한다. 각 변수는 이름, 기호, Z-number, molecular mass다.
 
 ```c++
   G4Element *element_C  = new G4Element("Carbon",   "C",  6,  12.011*g/mole);
