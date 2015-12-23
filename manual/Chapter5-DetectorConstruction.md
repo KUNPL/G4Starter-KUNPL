@@ -1,4 +1,4 @@
-#검출기 만들기
+# 5 장. 검출기 만들기
 
 검출기를 만드는 클래스는 KooDetectorConstruction이다. 앞장에서 말했듯이 user class 에는 반드시 정의 해야 하는 함수들이 있는데 DetectorConstruction의 경우는 G4VPhysicalVolume* Construct()이다. 이 예제에서는 공기로 되어 있는 World와 C10H11로 되어 있는 Detector를 만들 것이다. 코드를 보자.
 
@@ -179,3 +179,5 @@ Logical volume은 그 특성을 결정하는데 위 코드는 solid volume과 �
 마지막으로 Physical volume은 logical volume을 위치시키는 일을 한다. 하나의 logical volume을 가지고 여러개를 만드는 것도 가능하다(이 경우 copy number를 다르게 해준다). 또 상위 물질(Mother volume)을 입력하여 물질의 상하관계를 알려주어야 한다. World의 경우는 상위 물질이 없지만 Detector의 경우 상위 물질은 World가 된다.
 
 Construct가 반환해야 할 volume은 가장 상위 물질인 World의 Physical volume이다. World의 Physical volume은 모든 정보를 가지고 있기 때문에 다른 검출기의 Physical volume은 new로 만들기만 하고 변수로 받지않아도 메모리에 남게 된다.
+
+### [다음](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter6-PrimaryGeneratorAction.md)
