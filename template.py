@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#-*- coding: utf-8 -*-
 import os
 import sys
 
@@ -16,6 +17,59 @@ os.system(command)
 command = 'mkdir ' + project + '/build'
 os.system(command)
 
+
+
+#-------------------------------------------------------
+template_name = 'README.md'
+copy_name = project + '/' + template_name
+copy_file = open(copy_name, 'w')
+
+content = '''# DUMMY
+
+- [홈](https://github.com/KUNPL/G4Starter-KUNPL)
+
+- 여기에 있는 예제들은 Geant4.10.02 과 ROOT5.34.21에서 테스트 되었으며
+  이보다 낮은 버젼을 사용할 경우 컴파일이 및 이벤트 디스플레이가 
+  정상적으로 작동하지 않을 수 있다.
+
+---
+
+###1. 컴파일
+
+- DUMMY 폴더안에서 build 폴더를 만들고 들어간다:
+  ```sh
+  > mkdir build  
+  > cd build  
+  ```
+
+- Geant4 와 ROOT 환경을 설정한다. 핵물리연구실 서버의 경우 다음과 같다:
+  ```sh
+  > geant41000p02
+  > root5
+  ```
+
+- cmake!
+  ```sh
+  > cmake ..  
+  > make   
+  ```
+
+
+###2. 실행
+
+  ```sh
+  > ./DUMMY
+  
+  Geant4 kernal 을 실행중...
+  
+  Idle> /run/beamOn 10  
+  Idle> ...  
+  Idle> exit  
+  ```
+'''
+content = content.replace('DUMMY',project)
+copy_file.write(content)
+copy_file.close()
 
 
 #-------------------------------------------------------
