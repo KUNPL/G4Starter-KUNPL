@@ -8,7 +8,7 @@
 
 아래에서 말한것과 같이 Geant4는 버전이 올라감에 따라 호환이 되지 않는 경우가 많다. 따라서 버전이 달라서 잘못되는 경우가 없도록 주의하자.
 
-GEANT4 버전이 올라감에 따라 4.10.00.02 버전에 맞게 예제를 만들고 매뉴얼을 만들었다. 루트의 경우 ROOT5.34.21를 사용하였다. 버전 외의 큰 차이점은 Physics List를 Geant4 기본 Physics List로 바꾼것, Digitization의 일부분이기도 한 G4PVReplica 제거,  그리고 RO(ReadOut)Geometry, SensitiveDetector와 Hit 클래스를 제거하고 직접 SteppingAction에서 데이터를 가지고 온다는 점이 있다. ROGeometry와 SensitiveDetector는 복잡한 검출기 시스템을 시뮬레이션 할 때 유용하지만 그 외의 간단한 시뮬레이션에서는 직접 Action 클래스에서 정보를 가지고 오는것이 더 편리하다. 개인적으로 이 두개의 개념은 처음에 배우기가 어렵고 더욱이 해야 하는 코딩도 너무 많다고 생각한다. 먼저 Geant4의 기본을 알고 자신감이 생긴 후 2판의 매뉴얼을 보면서 공부하는 것을 추천한다.
+GEANT4 버전이 올라감에 따라 4.10.00.02 버전에 맞게 예제와 매뉴얼을 만들었다. 루트의 경우 ROOT5.34.21를 사용하였다. 버전 외의 큰 차이점은 Physics List를 Geant4 기본 Physics List로 바꾼것, Digitization의 일부분이기도 한 G4PVReplica 제거,  그리고 RO(ReadOut)Geometry, SensitiveDetector와 Hit 클래스를 제거하고 직접 SteppingAction에서 데이터를 가지고 온다는 점이 있다. ROGeometry와 SensitiveDetector는 복잡한 검출기 시스템을 시뮬레이션 할 때 유용하지만 그 외의 간단한 시뮬레이션에서는 직접 Action 클래스에서 정보를 가지고 오는것이 더 편리하다. 개인적으로 이 두개의 개념은 처음에 배우기가 어렵고 더욱이 해야 하는 코딩도 너무 많다고 생각한다. 먼저 Geant4의 기본을 알고 자신감이 생긴 후 2판의 매뉴얼을 보면서 공부하는 것을 추천한다.
 
 
 ###2판 
