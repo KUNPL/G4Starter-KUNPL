@@ -4,11 +4,12 @@
 > 이정우 (phyjics@gmail.com), December 23, 2015  
 > https://github.com/KUNPL/G4Starter-KUNPL
 
-GEANT4 버전이 올라감에 따라 4.10.00.02 버전에 맞게 예제를 만듦과 동시에 매뉴얼을 수정하였다. 예전 매뉴얼은 2판의 Github repository를 통해서 볼 수 있다.
+본인은 처음 Geant4를 배울 때 아래 'Geant4 무작정 따라하기'를 보고 공부했고 지금 쓰는 매뉴얼도 아래 매뉴얼의 흐름을 많이 빌려왔다. 따라서 'Geant4 무작정 따라하기'의 Introduction과 매뉴얼의 주소를 남긴다.
 
-지금부터 보게 될 예제는 Geant4.10.00.02와 ROOT5.34.21에 맞게 쓰였다.
+아래에서 말한것과 같이 Geant4는 버전이 올라감에 따라 호환이 되지 않는 경우가 많다. 따라서 버전이 달라서 잘못되는 경우가 없도록 주의하자.
 
-본인은 처음 Geant4를 배울 때 아래 'Geant4 무작정 따라하기'를 보고 공부했고 지금 쓰는 매뉴얼도 아래 매뉴얼의 흐름을 많이 빌려왔다. 따라서 'Geant4 무작정 따라하기'의 Introduction과 매뉴얼의 주소를 남다. 아래에서 말한것과 같이 Geant4는 버전이 올라감에 따라 호환이 되지 않는 경우가 많다. 따라서 버전이 달라서 잘못되는 경우가 없도록 주의하자.
+GEANT4 버전이 올라감에 따라 4.10.00.02 버전에 맞게 예제를 만들고 매뉴얼을 만들었다. 루트의 경우 ROOT5.34.21를 사용하였다. 버전 외의 큰 차이점은 Physics List를 Geant4 기본 Physics List로 바꾼것, Digitization의 일부분이기도 한 G4PVReplica 제거,  그리고 RO(ReadOut)Geometry, SensitiveDetector와 Hit 클래스를 제거하고 직접 SteppingAction에서 데이터를 가지고 온다는 점이 있다. ROGeometry와 SensitiveDetector는 복잡한 검출기 시스템을 시뮬레이션 할 때 유용하지만 그 외의 간단한 시뮬레이션에서는 직접 Action 클래스에서 정보를 가지고 오는것이 더 편리하다. 개인적으로 이 두개의 개념은 처음에 배우기가 어렵고 더욱이 해야 하는 코딩도 너무 많다고 생각한다. 먼저 Geant4의 기본을 알고 자신감이 생긴 후 2판의 매뉴얼을 보면서 공부하는 것을 추천한다.
+
 
 ###2판 
 > 장진희 (geniejhang@majimak.com), July 2, 2014, Based on the advice of Kisoo Lee  
