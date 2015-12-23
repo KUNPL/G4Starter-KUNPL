@@ -1,5 +1,13 @@
 #Introduction
 
+###3판 
+> 이정우 (phyjics@gmail.com), December 23, 2015  
+> https://github.com/KUNPL/G4Starter-KUNPL
+
+GEANT4 버전이 올라감에 따라 4.10.00.02 버전에 맞게 예제를 만듦과 동시에 매뉴얼을 수정하였다. 예전 매뉴얼은 2판의 Github repository를 통해서 볼 수 있다.
+
+지금부터 보게 될 예제는 Geant4.10.00.02와 ROOT5.34.21에 맞게 쓰였다.
+
 ###2판 
 > 장진희 (geniejhang@majimak.com), July 2, 2014, Based on the advice of Kisoo Lee  
 > https://github.com/KUNPL/GEANT4_example
@@ -11,11 +19,3 @@ GEANT는 Geometry ANd Tracking의 약자로, 뒤에있는 4는 당연히 4번째
 라이브러리 패키지가 뭔지 잘 다가오지 않는 나같은 사람이 있을지도 몰라 간단히 설명해보 도록 하겠다. 아무것도 없는 상태에서 시뮬레이션을 하려고 한다고 해보자. 먼저 기본 단위를 정해야 한다. 길이, 시간, 에너지, 전하량 등등. 계산을 좀 편하게 하기 위해서, 숫자 세개의 묶음 이 벡터라는것도 알려줘야 하고, 이 벡터들 사이에 연산 방법을 알려줘야 한다. 속도를 알려주면, 이 속도라는게 정해준 단위 시간당 얼마만큼의 거리를 프로그램내에서 진행한다는 것을 알려 줘야 한다. 검출기나 기타 물질들과 어떤 상호작용을 하는지 알려줘야 한다. 이처럼 여러가지 해야할 것들을 하나의 패키지로 묶어서 사용할 수 있게 해놓은것이 라이브러리 패키지이다.
 
 참고: 이 문서는 GEANT4.9.4.p01버전과 CLHEP 2.1.0.1버전을 이용해서 만들어졌다. 나중 에 GEANT4가 업데이트 되면서 실행이 안되는 부분이 생길 수도 있다.
-
-###3판 
-> 이정우 (phyjics@gmail.com), December 23, 2015  
-> https://github.com/KUNPL/G4Starter-KUNPL
-
-GEANT4 버전이 올라감에 따라 4.10.00.02 버전에 맞게 예제를 만듦과 동시에 매뉴얼을 수정하였다. 예전 매뉴얼은 2판의 Github repository를 통해서 볼 수 있다.
-
-지금부터 보게 될 예제는 Geant4.10.00.02와 ROOT5.34.21에 맞게 쓰였다.
