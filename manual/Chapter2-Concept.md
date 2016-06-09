@@ -40,4 +40,10 @@ Geant4 시뮬레이션에서 우리가 수동적으로 다룰 수 있는 단계�
 
 앞서 말했듯이 스텝은 두개의 점으로 이루어져 있다. 하나의 트랙은 스텝의 연속으로 이루어져 있으므로 한 스텝의 끝점은 그 다음 스텝의 시작점이 된다.
 
+---
+
+### What do we have to define?
+
+There are 3 things we have to define in order to do Geant4 simulation: Physics List, matter, and primary beam.
+
 ### [다음](https://github.com/KUNPL/G4Starter-KUNPL/blob/master/manual/Chapter3-Start.md)
