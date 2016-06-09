@@ -15,7 +15,7 @@ Geant4 [Documetation](http://geant4.cern.ch/support/userdocuments.shtml)은 매�
 ---
 
 I found this manual is unique enough to be translated in English.
-Just note that this is manual was written using GEANT4.10.00.02 and ROOT5.34.21
+Just note that this manual was written using GEANT4.10.00.02 and ROOT5.34.21
 
 ###2 판 
 > 장진희 (geniejhang@majimak.com), July 2, 2014, Based on the advice of Kisoo Lee  
