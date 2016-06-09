@@ -12,6 +12,11 @@ GEANT4.10.00.02 버전에 맞게 예제와 매뉴얼을 만들었다. 루트의 
 
 Geant4 [Documetation](http://geant4.cern.ch/support/userdocuments.shtml)은 매우 훌륭하다. 영어를 잘 한다면 Geant4 [Documetation](http://geant4.cern.ch/support/userdocuments.shtml)의 [User's Guide: For Application Developers](http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/ForApplicationDeveloper/html/index.html)를 읽으면서 공부하는 것을 추천한다. 지금 작성하는 매뉴얼은 Geant4를 한번도 사용해 보지 않았지만 영어가 서툴어서 공식 매뉴얼을 보고 시작하기 어려운 사람들을 위한 설명서이다.
 
+---
+
+I found this manual is unique enough to be translated in English.
+Just note that this is manual was written using GEANT4.10.00.02 and ROOT5.34.21
+
 ###2 판 
 > 장진희 (geniejhang@majimak.com), July 2, 2014, Based on the advice of Kisoo Lee  
 > https://github.com/KUNPL/GEANT4_example
